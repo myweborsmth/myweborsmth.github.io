@@ -1,46 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to My Site</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      text-align: center;
-    }
-    a {
-      margin-top: 1.5em;
-      text-decoration: none;
-      background: #333;
-      color: white;
-      padding: 0.7em 1.5em;
-      border-radius: 8px;
-      transition: 0.2s;
-    }
-    a:hover {
-      background: #555;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Personal site — clean, responsive starter" />
+  <title>Welcome — myweborsmth</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Homepage">myweborsmth</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="btn btn-ghost">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Introduction">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Hello, world — make it beautiful.</h1>
+          <p>
+            A simple, readable starter to learn layout, typography and responsive design.
+            Tweak the colors, fonts and spacing to make it your own.
+          </p>
+          <p class="hero-cta">
+            <a class="btn" href="#features">Get started</a>
+            <a class="btn btn-ghost" href="#about">Learn more</a>
+          </p>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-sample">
+            <strong>Tip</strong>
+            <p>Use font-size, spacing, and a clear color scale for better readability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features container" aria-labelledby="features-heading">
+      <h2 id="features-heading">What you can learn</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Typography</h3>
+          <p>Choose legible fonts, use a clear scale for headings and body copy, and prefer relative units (rem).</p>
+        </article>
+        <article class="card">
+          <h3>Layout</h3>
+          <p>Master Flexbox & Grid for responsive layouts — start with one column on small screens, multiple on wide screens.</p>
+        </article>
+        <article class="card">
+          <h3>Colors & Contrast</h3>
+          <p>Pick a small palette (primary, accent, neutral). Ensure contrast for accessibility.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2>About this starter</h2>
+      <p>
+        This demo separates structure (HTML) from presentation (CSS). Use the styles.css file to experiment with
+        spacing, colors and responsive breakpoints. Small incremental changes teach the most.
+      </p>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>If you'd like, I can open a pull request with these files added to your repo so you can preview the site on GitHub Pages.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> myweborsmth • Built with simple HTML & CSS</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small script to keep the copyright year current
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
