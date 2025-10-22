@@ -1,94 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Personal site — clean, responsive starter" />
-  <title>Welcome — myweborsmth</title>
-
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main stylesheet -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LC SITE MY GUY</title>
+  <meta name="description" content="Personal site — simple starter">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Homepage">myweborsmth</a>
+      <a class="brand" href="/">Your Name</a>
       <nav aria-label="Main navigation">
         <ul class="nav-list">
-          <li><a href="#features">Features</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact" class="btn btn-ghost">Contact</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero" aria-label="Introduction">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Hello, world — make it beautiful.</h1>
-          <p>
-            A simple, readable starter to learn layout, typography and responsive design.
-            Tweak the colors, fonts and spacing to make it your own.
-          </p>
-          <p class="hero-cta">
-            <a class="btn" href="#features">Get started</a>
-            <a class="btn btn-ghost" href="#about">Learn more</a>
-          </p>
-        </div>
-        <div class="hero-card" aria-hidden="true">
-          <div class="card-sample">
-            <strong>Tip</strong>
-            <p>Use font-size, spacing, and a clear color scale for better readability.</p>
-          </div>
-        </div>
+    <section class="hero container" aria-label="Intro">
+      <div class="hero-left">
+        <h1>Hi, I’m LC.</h1>
+        <p class="lead">I do shit sometimes and you should see.</p>
+        <p>
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </p>
       </div>
-    </section>
-
-    <section id="features" class="features container" aria-labelledby="features-heading">
-      <h2 id="features-heading">What you can learn</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Typography</h3>
-          <p>Choose legible fonts, use a clear scale for headings and body copy, and prefer relative units (rem).</p>
-        </article>
-        <article class="card">
-          <h3>Layout</h3>
-          <p>Master Flexbox & Grid for responsive layouts — start with one column on small screens, multiple on wide screens.</p>
-        </article>
-        <article class="card">
-          <h3>Colors & Contrast</h3>
-          <p>Pick a small palette (primary, accent, neutral). Ensure contrast for accessibility.</p>
-        </article>
+      <div class="hero-right" aria-hidden="true">
+        <!-- Optional: replace with your photo later -->
+        <div class="avatar">YN</div>
       </div>
     </section>
 
     <section id="about" class="container">
-      <h2>About this starter</h2>
-      <p>
-        This demo separates structure (HTML) from presentation (CSS). Use the styles.css file to experiment with
-        spacing, colors and responsive breakpoints. Small incremental changes teach the most.
-      </p>
+      <h2>About</h2>
+      <p>I’m a guy who makes shit and enjoys it, whether that is websites, games, music, art, or just dumb shit in general. You should stick by me to see what's next</p>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project one</h3>
+          <p> I'll start putting future projects here.</p>
+        </article>
+        <article class="card">
+          <h3>Project two</h3>
+          <p>Still nothin.</p>
+        </article>
+      </div>
     </section>
 
     <section id="contact" class="container">
       <h2>Contact</h2>
-      <p>If you'd like, I can open a pull request with these files added to your repo so you can preview the site on GitHub Pages.</p>
+      <p>If you want, email me — <a href="mailto:you@example.com">lcdelatorrecas@gmail.com</a>.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> myweborsmth • Built with simple HTML & CSS</p>
+      <p>&copy; <span id="year"></span> LC</p>
     </div>
   </footer>
 
   <script>
-    // Small script to keep the copyright year current
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
