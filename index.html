@@ -1,76 +1,176 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>LC SITE MY GUY</title>
-  <meta name="description" content="Personal site — simple starter">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Beautiful by Design</title>
+  <meta name="description" content="A polished personal site — portfolio, projects and contact. Built for readability, accessibility and performance.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme color for mobile -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-  <header class="site-header">
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="/">Your Name</a>
-      <nav aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Homepage">
+        <span class="brand-serif">Your</span><span class="brand-sans">Name</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <nav id="primary-navigation" class="nav" role="navigation" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact" class="cta-link">Contact</a></li>
         </ul>
       </nav>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero container" aria-label="Intro">
-      <div class="hero-left">
-        <h1>Hi, I’m LC.</h1>
-        <p class="lead">I do shit sometimes and you should see.</p>
-        <p>
-          <a class="btn" href="#projects">See projects</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-        </p>
-      </div>
-      <div class="hero-right" aria-hidden="true">
-        <!-- Optional: replace with your photo later -->
-        <div class="avatar">YN</div>
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Designer &amp; Developer</p>
+          <h1>Crafting thoughtful interfaces and tiny delightful interactions.</h1>
+          <p class="lead">I build elegant, fast websites and small apps — focusing on clarity, accessibility, and performance. Below are a few things I’ve shipped recently.</p>
+          <p class="hero-ctas">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </p>
+          <ul class="meta-list" aria-hidden="true">
+            <li><strong>Open to:</strong> Freelance &amp; contract</li>
+            <li><strong>Location:</strong> Remote</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Simple, responsive inline illustration / card stack -->
+          <svg class="hero-art" viewBox="0 0 560 420" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2563eb" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#06b6d4" stop-opacity="0.95"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="40" width="520" height="320" rx="20" fill="url(#g)" opacity="0.95"/>
+            <rect x="48" y="72" width="424" height="256" rx="12" fill="#fff" opacity="0.9"/>
+            <g transform="translate(76,112)" fill="none" stroke="#0b1220" stroke-opacity="0.08" stroke-width="8">
+              <rect width="360" height="160" rx="8"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="container">
-      <h2>About</h2>
-      <p>I’m a guy who makes shit and enjoys it, whether that is websites, games, music, art, or just dumb shit in general. You should stick by me to see what's next</p>
+    <section id="about" class="container about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>I’m a product-minded engineer who cares about readable interfaces, performance and accessibility. I enjoy shipping small, maintainable features rather than large monoliths.</p>
+      <p>My workflow: sketch → prototype → iterate with real users. I prefer semantic HTML, CSS variables, and tiny JS for interactions only when needed.</p>
     </section>
 
-    <section id="projects" class="container">
-      <h2>Projects</h2>
+    <section id="projects" class="container projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected projects</h2>
       <div class="grid">
-        <article class="card">
-          <h3>Project one</h3>
-          <p> I'll start putting future projects here.</p>
+        <article class="project-card">
+          <a href="#" class="project-link" aria-label="Open project one details">
+            <div class="project-media" role="img" aria-hidden="true">P1</div>
+            <div class="project-body">
+              <h3>Project One</h3>
+              <p>A tiny client dashboard with real-time updates and accessible charts.</p>
+              <p class="project-tags"><span>React</span><span>Charts</span><span>Accessibility</span></p>
+            </div>
+          </a>
         </article>
-        <article class="card">
-          <h3>Project two</h3>
-          <p>Still nothin.</p>
+
+        <article class="project-card">
+          <a href="#" class="project-link" aria-label="Open project two details">
+            <div class="project-media" role="img" aria-hidden="true">P2</div>
+            <div class="project-body">
+              <h3>Project Two</h3>
+              <p>Static site generator for documentation with built-in search and offline support.</p>
+              <p class="project-tags"><span>Static</span><span>Search</span><span>PWA</span></p>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card">
+          <a href="#" class="project-link" aria-label="Open project three details">
+            <div class="project-media" role="img" aria-hidden="true">P3</div>
+            <div class="project-body">
+              <h3>Project Three</h3>
+              <p>Accessible form components library with validation and helpful UX patterns.</p>
+              <p class="project-tags"><span>UI</span><span>Forms</span><span>UX</span></p>
+            </div>
+          </a>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="container">
-      <h2>Contact</h2>
-      <p>If you want, email me — <a href="mailto:you@example.com">lcdelatorrecas@gmail.com</a>.</p>
+    <section id="work" class="container work" aria-labelledby="work-heading">
+      <h2 id="work-heading">Recent work</h2>
+      <ul class="timeline">
+        <li><strong>2025</strong> — Freelance product work and design system maintenance</li>
+        <li><strong>2024</strong> — Built an internal dashboard used by 200+ employees</li>
+        <li><strong>2023</strong> — Open-source UI library published</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>If you’d like to work together, email <a href="mailto:you@example.com">you@example.com</a> or use the form below.</p>
+
+      <form id="contact-form" class="contact-form" action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <div class="form-row form-actions">
+          <button type="submit" class="btn">Send message</button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+        </div>
+
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> LC</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Your Name — Built with care.</p>
+      <p class="footer-links"><a href="#privacy">Privacy</a> · <a href="#sitemap">Sitemap</a></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
