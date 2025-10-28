@@ -1,1 +1,266 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
 
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+	background-color: #000;
+	color: white;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #000;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:000;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #000;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+/* MY CODE */
+
+nav ul {
+  display: flex;              /* puts <li> side by side */
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* vertical alignment (optional) */
+  gap: 30px;                  /* space between each link */
+  list-style: none;           /* removes bullet points */
+  padding: 0;                 /* removes default list padding */
+  margin: 0;                  /* removes default margin */
+}
+
+nav a {
+  text-decoration: none;      /* no underline */
+  color: white;
+  font-size: 40px;
+  font-family: "BitPap", sans-serif;
+  transition: 0.7s; 
+}
+  
+nav a:hover {
+  color: yellow; /* changes color on hover */
+}
+
+nav {
+  background-color: black;    /* optional background bar */
+  padding: 20px;
+}
+
+
+
+.titlebox {
+	/*back image*/
+	background-image: url("Catlotta.png");
+	
+	/*box info*/ 
+	position: relative;
+ 	overflow: hidden;
+	height: 800px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+}
+
+@font-face {
+	/*BITPAP font*/
+	font-family: "BitPap";
+	src: url("BitPap.ttf")
+}
+
+.titlebox p {
+	/*text info*/
+	position: absolute; /* allows movement */
+	font-family: "BitPap", sans-serif;
+	font-size: 300px;
+ 	color: #fff;
+ 	text-shadow: 0 0 15px #fff;
+ 	user-select: none;
+	margin: 0;
+}
+
+
+
+/*about section*/
+.about-box {
+	
+}
+
+.about-title {
+	height: 200px;
+	line-height: 200px;
+	color: white;
+	text-align: center;
+	background-color: black;
+	font-family: "BitPap", sans-serif;
+	font-size: 100px;
+}
+
+.about-text {
+	height: 300px;
+	line-height: 200px;
+	color: white;
+	text-align: center;
+	background-color: black;
+	font-family: "BitPap", sans-serif;
+	font-size: 50px;
+}
+
+
+/*scrolling hub*/
+
+.hub-section {
+	line-height: 100px;
+	text-align: center;
+	background-color: black;
+	font-size: 40px;
+	color: white;
+	font-family: "BitPap", sans-serif;
+}
+
+.hub {
+	background-color: black;
+ 	display: flex;              /* line up cards horizontally */
+ 	gap: 20px;                  /* space between cards */
+ 	overflow-x: auto;           /* allows horizontal scroll */
+ 	padding: 20px;
+ 	scroll-behavior: smooth;    /* smooth scroll */
+}
+
+.hub::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hub::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 4px;
+}
+
+/*cards*/
+
+.card {
+  min-width: 200px;
+  height: 150px;
+  border-radius: 10px; 
+  overflow: hidden; 
+  border: 2px solid white;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: black;
+}
+
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit; 
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #222;
+  box-shadow: 0 0 15px yellow;
+}
+
+.music-card {
+  width: 200px;              /* same width as regular cards */
+  height: 200px;             /* same height as regular cards */
+  background: none;
+  border: 2px solid white;   /* keeps border consistent */
+  border-radius: 10px;
+  overflow: hidden;          /* rounds the image too */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
